@@ -21,6 +21,7 @@ import {
   Send,
   Cpu
 } from 'lucide-react';
+import Pricing from './Pricing';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -40,6 +41,7 @@ export default function App() {
         <PlaySquare className="w-4 h-4 mr-1" /> Simulator
       </button>
       <button onClick={() => navigateTo('about')} className={`text-sm font-medium hover:text-blue-600 transition-colors ${activeTab === 'about' ? 'text-blue-600' : 'text-slate-600'}`}>My Story</button>
+      <button onClick={() => navigateTo('contact')} className={`text-sm font-medium hover:text-blue-600 transition-colors ${activeTab === 'contact' ? 'text-blue-600' : 'text-slate-600'}`}>Pricing</button>
       <button onClick={() => navigateTo('contact')} className="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
         Book Free Call
       </button>
@@ -572,8 +574,13 @@ function ContactView() {
   };
 
   return (
-    <div className="animate-in fade-in duration-500 bg-slate-50 py-20 min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="animate-in fade-in duration-500 bg-slate-50 py-12 min-h-screen">
+      
+      {/* Anchor: Pricing Component placed immediately above the form */}
+      <Pricing />
+
+      {/* Gate: The Contact Form */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
           <div className="bg-slate-900 px-8 py-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Book a Free Workflow Mapping Call</h2>
